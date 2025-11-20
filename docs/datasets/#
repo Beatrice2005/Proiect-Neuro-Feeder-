@@ -1,1 +1,22 @@
+##  2. Descrierea Setului de Date
 
+### 2.1 Sursa datelor
+
+* **Origine:** Generarea programatica bazata pe cunostinte din nutritia animala si profilul de activitate
+* **Modul de achiziție:** generare programatica
+* **Perioada / condițiile colectării:** Date simulate, generate pentru a reprezenta o monitorizare pe termen lung
+
+### 2.2 Caracteristicile dataset-ului
+
+* **Număr total de observații:** 15,000
+* **Număr de caracteristici (features):** 3 inputuri si un target
+* **Tipuri de date:** Numerice 
+* **Format fișiere:** CSV 
+
+### 2.3 Descrierea fiecărei caracteristici
+
+| **Caracteristică** | **Tip** | **Unitate** | **Descriere** | **Domeniu valori** |
+| greutatea_curenta | numeric | kg | Greutatea animalului inregistrata la momentul hranirii | 5.0-30.0 |
+| varsta_animalului | numeric | ani | Varsta animalului | 0.5-12.0 |
+| orele_de_activitate | numeric | ore | Orele de activitate inregistrate de colier in ultimele 24 de ore | 0.5-12.0 |
+| grame_hrana_necesare | numeric | grame | Cantitatea optima de hrana calculata de variabila tinta | 10-500 |
