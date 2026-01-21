@@ -1,6 +1,6 @@
 {
-  "test_accuracy": 0.9283,
-  "test_f1_macro": 0.9145,
-  "final_loss_mse": 159.65,
-  "early_stopping_epoch": 92
+  "test_accuracy": 0.9663,
+  "test_f1_macro": 0.9520,
+  "final_status": "Early stopping triggered",
+  "contribution_original_data": "40%"
 }
