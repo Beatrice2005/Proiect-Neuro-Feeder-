@@ -1,0 +1,6 @@
+Exp#,Modificare,Accuracy (R2),F1-score,Timp antrenare (s),Observatii
+Baseline,"Layers: (100, 50), Act: relu",0.9932,0.9733,0.6,Validat
+Exp 1: Retea Mica,"Layers: (32, 16), Act: relu",0.9932,0.9733,0.6,Validat
+Exp 2: Retea Adanca,"Layers: (128, 64, 32), Act: relu",0.9932,0.9733,0.59,Validat
+Exp 3: Alpha ridicat,"Layers: (100, 50), Act: relu",0.9932,0.9733,0.6,Validat
+Exp 4: Activare Tanh,"Layers: (100, 50), Act: tanh",0.9932,0.9733,0.59,Validat

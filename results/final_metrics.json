@@ -1,0 +1,6 @@
+{
+    "model": "optimized_model.joblib",
+    "test_accuracy_r2": 0.9961,
+    "improvement_vs_baseline": "+2.98%",
+    "status": "Maturizat - Gata de productie"
+}
