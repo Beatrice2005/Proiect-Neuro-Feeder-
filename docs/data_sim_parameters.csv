@@ -1,0 +1,12 @@
+Parametru,Valoare,Unitate,Explicatie
+NUMAR_OBSERVATII_FINALE,15000.0,observatii,Totalul de inregistrari generate.
+GREUTATE_MINIMA,5.0,kg,Limita fizica inferioara a greutatii.
+GREUTATE_MAXIMA,30.0,kg,Limita fizica superioara a greutatii.
+VARSTA_MINIMA,0.5,ani,Varsta minima de inregistrare.
+VARSTA_MAXIMA,12.0,ani,Varsta maxima de inregistrare.
+ACTIVITATE_MINIMA,0.5,ore,Activitate minima zilnica.
+ACTIVITATE_MAXIMA,12.0,ore,Activitate maxima zilnica.
+Zgomot_Aleatoriu_Max,15.0,grame,Eroarea maxima adaugata la portia tinta.
+Factor_Ajustare_Pui (Varsta < 1.0),1.5,multiplicator,Factor energetic aplicat animalelor tinere (crestere).
+Factor_Ajustare_Senior (Varsta > 8.0),0.9,multiplicator,Factor energetic aplicat animalelor batrane (metabolism scazut).
+Constanta_Baza_RMR,80.0,grame_baza,"Cantitatea de baza necesara, independenta de parametri."
