@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuro-Feeder | Calculator Portie Inteligenta</title>
+    
+    <style>
+        :root {
+            --primary-color: #4e342e;
+            --secondary-color: #8d6e63;
+            --background-color: #ffffff;
+            --text-color: #212121;
+            --button-color: #000000;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            
+            background: linear-gradient(rgba(173, 216, 230, 0.5), rgba(173, 216, 230, 0.5)), 
+                        url('/static/dogs.and.cats2.jpg') no-repeat center 30px fixed;
+            background-size: cover;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+            text-align: center;
+        }
+
+        header h1 { margin: 0; font-size: 2em; }
+
+        main {
+            flex-grow: 1;
+            padding: 30px 0 40px 0; 
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+        .intro p {
+            text-align: center;
+            margin-bottom: 20px;
+            max-width: 600px;
+            font-size: 1.1em;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .calculator-box {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
+            border: 1px solid var(--secondary-color);
+            width: 100%;
+            max-width: 450px;
+            box-sizing: border-box;
+            text-align: center; 
+        }
+
+        .calculator-box h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .input-group { margin-bottom: 18px; display: flex; flex-direction: column; align-items: center; }
+        .input-group label { margin-bottom: 5px; font-weight: bold; color: var(--text-color); }
+
+        input, select {
+            width: 90%; 
+            max-width: 300px;
+            padding: 10px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 5px;
+            text-align: center; 
+            font-size: 1em;
+        }
+
+        #calculateBtn {
+            background-color: var(--button-color); 
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            width: 90%;
+            max-width: 300px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .result-box {
+            margin-top: 35px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            text-align: center;
+            border: 1px dashed var(--secondary-color);
+        }
+
+        .result-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: var(--primary-color);
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer {
+            background-color: #212121; 
+            color: white;
+            padding: 15px 0;
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+        }
+        .footer-text { margin: 5px 0; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <header><h1>NEURO-FEEDER</h1></header>
+
+    <main>
+        <div class="intro">
+            <p>Sistemul Neuro-Feeder calculeaza portia optima de hrana bazat pe datele tale.</p>
+            <p>Introduceti datele actuale ale animalului:</p>
+        </div>
+
+        <div class="calculator-box">
+            <h2>DATE ANIMAL</h2>
+            <form id="feederForm">
+                <div class="input-group">
+                    <label>Tip Animal:</label>
+                    <select id="animal_type">
+                        <option value="caine">Caine</option>
+                        <option value="pisica">Pisica</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Greutate Curenta (kg):</label>
+                    <input type="number" id="greutate" step="0.01" required>
+                </div>
+                <div class="input-group">
+                    <label>Varsta (ani):</label>
+                    <input type="number" id="varsta" step="0.1" required>
+                </div>
+                <div class="input-group">
+                    <label>Ore de Activitate (ore/zi):</label>
+                    <input type="number" id="activitate" step="0.1" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">Adresa Email (Optional):</label>
+                    <input type="email" id="email" placeholder="nume@gmail.com">
+                </div>
+
+                <button type="submit" id="calculateBtn">CALCULEAZA PORTIA OPTIMA</button>
+            </form>
+
+            <div class="result-box">
+                <h2>Rezultat calcul:</h2>
+                <div id="foodResult" class="result-value">Asteapta date...</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-text">Animalutele "prea" pofticioase !</p>
+        <p class="footer-text">Proiect RN</p>
+        <p class="footer-text">Domeniu: Nutritie Animala | Beatrice Debruyker</p>
+    </footer>
+
+<script>
+document.getElementById('feederForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const payload = {
+        tip_animal: document.getElementById('animal_type').value === 'caine' ? 'Caine' : 'Pisica',
+        greutate: parseFloat(document.getElementById('greutate').value),
+        varsta: parseFloat(document.getElementById('varsta').value),
+        activitate: parseFloat(document.getElementById('activitate').value),
+        email: document.getElementById('email').value 
+    };
+
+    const resultDiv = document.getElementById('foodResult');
+    resultDiv.textContent = "Se calculeaza...";
+
+    try {
+        const response = await fetch('/predict', { 
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+        if (data.portie_recomandata !== undefined) {
+            resultDiv.textContent = data.portie_recomandata + " grame";
+        } else {
+            resultDiv.textContent = "Eroare!";
+        }
+    } catch (error) {
+        resultDiv.textContent = "Eroare conexiune!";
+    }
+});
+</script>
+</body>
+</html>
